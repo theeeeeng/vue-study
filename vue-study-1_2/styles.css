@@ -1,0 +1,24 @@
+body {
+  background-color: white;
+}
+
+.color-list {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.list {
+  display: inline-block;
+}
+
+.list .color {
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+}
+
+.selected-color .color {
+  width: 100px;
+  height: 100px;
+}
