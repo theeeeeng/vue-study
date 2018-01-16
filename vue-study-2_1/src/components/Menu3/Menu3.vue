@@ -1,6 +1,5 @@
 <template>
   <div class="menu3">
-    <div>메뉴3 페이지 입니다.</div>
     <router-view></router-view>
   </div>
 </template>

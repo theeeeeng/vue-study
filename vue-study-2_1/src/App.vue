@@ -4,11 +4,14 @@
       <div class="title"><router-link to="/">Vue.js Study</router-link></div>
       <ul class="bar">
         <li class="button">
-          <p><router-link to="/menu1">메뉴1</router-link></p>
+          <p><router-link to="/menu1">RGB</router-link></p>
           <div class="submenu">
-            <div><router-link to="/menu1/sub1">하위메뉴 1-1</router-link></div>
-            <div><router-link to="/menu1/sub2">하위메뉴 1-2</router-link></div>
-            <div><router-link to="/menu1/sub3">하위메뉴 1-3</router-link></div>
+            <div><router-link to="/menu1/sub1">BLUE</router-link></div>
+            <div><router-link to="/menu1/sub2">GREEN</router-link></div>
+            <div><router-link to="/menu1/sub3">PINK</router-link></div>
+            <div><router-link to="/menu1/sub4">YELLOW</router-link></div>
+            <div><router-link to="/menu1/sub5">RED</router-link></div>
+            <div><router-link to="/menu1/sub6">ETC</router-link></div>
           </div>
         </li>
         <li class="button">
@@ -86,6 +89,7 @@ a {
 }
 
 .submenu {
+  display: none;
   position: absolute;
   left: calc(50% - 50px);
   top: 52px;
@@ -93,16 +97,18 @@ a {
   background: rgba(255, 255, 255, 0.6);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  opacity: 0;
 }
 
 .navigation-bar li:hover .submenu {
-  opacity: 1;
-  transition: opacity 0.3s;
+  display: block;
 }
 
 .submenu div {
   line-height: 50px;
+}
+
+.container {
+  padding-top: 10px;
 }
 
 </style>

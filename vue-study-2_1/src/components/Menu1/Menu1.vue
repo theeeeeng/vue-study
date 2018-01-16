@@ -1,7 +1,8 @@
 <template>
   <div class="menu1">
-    <div>메뉴1 페이지 입니다.</div>
-    <router-view></router-view>
+    <div class="rgb-list">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -18,4 +19,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .rgb-list {
+    display: inline-block;
+    width: 1000px;
+  }
 </style>
