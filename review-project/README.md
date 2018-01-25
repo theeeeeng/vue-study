@@ -2,29 +2,10 @@
 
 > A Vue.js proejct for review about movies, books, etc ...
 
-## Build Setup
+## Vue.js 와 firebase
 
 ``` bash
-# install dependencies
-npm install
+# 미니 프로젝트
+리뷰 등록하고 리스트를 볼 수 있는 웹 프로젝트[데모 페이지](https://review-project-c5a79.firebaseapp.com/#/)
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
