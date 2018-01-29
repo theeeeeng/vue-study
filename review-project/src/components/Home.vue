@@ -2,48 +2,62 @@
   <div class="home">
     <!-- 첫번쨰 섹션 -->
     <section class="section01">
-      <center>
-        <div class="section-title">
-          <h1>Reeeeeview</h1>
-          <h5>당신이 끝까지 감상했던 것에 대한 리뷰를 공유해주세요 :)</h5>
-        </div>
-      </center>
-      <div class="section-footer">
-        <img src="../assets/ic_keyboard_arrow_down_white.png"/>
-        <div class="pantone-color">
-          PANTONE<br>
-          18-3838<br>
-          Ultra Violet
+      <div class="container">
+        <navigation></navigation>
+        <center>
+          <div class="section-title">
+            <h1>Reeeeeview</h1>
+            <h5>당신이 끝까지 감상했던 것에 대한 리뷰를 공유해주세요 :)</h5>
+          </div>
+        </center>
+        <div class="section-footer">
+          <img src="../assets/ic_keyboard_arrow_down_white.png"/>
+          <div class="pantone-color">
+            PANTONE<br>
+            18-3838<br>
+            Ultra Violet
+          </div>
         </div>
       </div>
     </section>
     <section class="section02">
-      <center>
-        <div class="section-title">
-          <h1>리뷰하고 싶은 종목을 골라보세요 :)</h1>
-          <h5>Select the type of review</h5>
-        </div>
-        <div class="section-buttons">
-          <button>Boooook</button>
-          <button>Movieeeee</button>
-          <button>Gameeeee</button>
-        </div>
-      </center>
+      <div class="container">
+        <center>
+          <div class="section-title">
+            <h1>리뷰하고 싶은 종목을 골라보세요 :)</h1>
+            <h5>Select the type of review</h5>
+          </div>
+          <div class="section-buttons">
+            <button>Boooook</button>
+            <button>Movieeeee</button>
+            <button>Gameeeee</button>
+          </div>
+        </center>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
+import Navigation from './Navigation';
+
 export default {
   name: 'Home',
+  components: {
+    navigation: Navigation,
+  },
 };
+
 </script>
 
 <style scoped>
-section {
+.container {
   display: table;
   width: 100%;
-  min-height: 100vh;
+  max-width: 1200px;
+  min-height: calc(100vh - 20px);
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
 center {
