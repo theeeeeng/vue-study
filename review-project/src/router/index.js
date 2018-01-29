@@ -8,8 +8,8 @@ import Icon from 'vue-awesome/components/Icon';
 import vuefire from 'vuefire';
 import firebase from 'firebase';
 
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
+import Buefy from 'buefy';
+import 'buefy/lib/buefy.css';
 
 const config = {
   apiKey: 'AIzaSyAel35QXr1X_OYA5pvDd-wX1dF5XzZ7HIY',
