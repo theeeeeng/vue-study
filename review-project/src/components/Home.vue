@@ -51,20 +51,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: table;
-  width: 100%;
-  max-width: 1200px;
-  min-height: calc(100vh - 20px);
-  margin: 0 auto;
-  padding: 10px 0;
-}
-
-center {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 .section01 {
   background-color: rgb(95, 75, 139);
 }

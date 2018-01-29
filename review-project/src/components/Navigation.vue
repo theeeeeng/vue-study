@@ -19,10 +19,11 @@ export default {
 .logo {
   width: auto;
   height: 50px;
+  margin-left: 10px;
 }
 
 .edit-icon {
   float: right;
-  margin: 7px 0;
+  margin: 7px 10px 7px 0;
 }
 </style>

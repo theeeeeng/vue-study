@@ -27,7 +27,7 @@ button:focus {
   display: table;
   width: 100%;
   max-width: 1200px;
-  min-height: calc(100vh - 20px);
+  min-height: 100vh;
   margin: 0 auto;
   padding: 10px 0;
 }
@@ -35,6 +35,11 @@ button:focus {
 center {
   display: table-cell;
   vertical-align: middle;
+}
+
+.edit textarea {
+  height: 300px;
+  resize: none;
 }
 
 </style>
