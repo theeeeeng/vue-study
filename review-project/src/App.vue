@@ -15,6 +15,7 @@ export default {
   padding: 0;
   margin: 0;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  word-break: keep-all;
 }
 
 button:focus {

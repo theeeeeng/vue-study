@@ -71,7 +71,7 @@ center {
 
 .section01 .section-title {
   width: 30%;
-  min-width: 400px;
+  min-width: 350px;
   margin: 0 auto;
   padding: 18px 0;
   border: 4px solid #fff;
@@ -135,6 +135,14 @@ center {
   color: #fff;
   font-size: 20px;
   font-weight: 700;
+}
+
+@media (max-width: 740px) {
+  .section02 button {
+    width: 80%;
+    max-width: 400px;
+    margin: 10px 0;
+  }
 }
 
 </style>
