@@ -28,7 +28,7 @@
             <h5>Select the type of review</h5>
           </div>
           <div class="section-buttons">
-            <button>Boooook</button>
+            <router-link to="/edit"><button>Boooook</button></router-link>
             <button>Movieeeee</button>
             <button>Gameeeee</button>
           </div>

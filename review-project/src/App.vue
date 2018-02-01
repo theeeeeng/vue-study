@@ -18,6 +18,10 @@ export default {
   word-break: keep-all;
 }
 
+button {
+  cursor: pointer;
+}
+
 button:focus {
   outline:0 !important;
 }
