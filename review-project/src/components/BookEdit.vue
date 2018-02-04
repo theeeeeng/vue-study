@@ -39,12 +39,15 @@ export default {
   methods: {
     pushBookReview: function () { // 책 리뷰 업로드
       const pushBooksRef = this.booksRef.push();
+      const now = new Date();
       pushBooksRef.set({
         book_title: this.bookTitle,
         book_author: this.bookAuthor,
         book_review: this.bookReview,
         member_id: 1,
-        date: new Date(),
+        like_count: 0,
+        dislike_count: 0,
+        date: now.toString(),
       });
     },
   },
