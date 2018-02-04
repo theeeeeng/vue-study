@@ -10,16 +10,17 @@
             <h5>당신이 끝까지 감상했던 것에 대한 리뷰를 공유해주세요 :)</h5>
           </div>
         </center>
-        <div class="section-footer">
+        <footer>
           <img src="../assets/ic_keyboard_arrow_down_white.png"/>
           <div class="pantone-color">
             PANTONE<br>
             18-3838<br>
             Ultra Violet
           </div>
-        </div>
+        </footer>
       </div>
     </section>
+    <!-- 두번째 섹션 -->
     <section class="section02">
       <div class="container">
         <center>
@@ -28,7 +29,7 @@
             <h5>Select the type of review</h5>
           </div>
           <div class="section-buttons">
-            <router-link to="/edit"><button>Boooook</button></router-link>
+            <router-link to="/book"><button>Boooook</button></router-link>
             <button>Movieeeee</button>
             <button>Gameeeee</button>
           </div>
@@ -77,13 +78,7 @@ export default {
   border: 4px solid #fff;
 }
 
-.section01 .section-footer {
-  position: relative;
-  display: table-footer-group;
-  text-align: center;
-}
-
-.section01 .section-footer img {
+.section01 footer img {
   width: 25px;
   height: auto;
   border: 2px solid #fff;

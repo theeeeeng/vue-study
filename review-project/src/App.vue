@@ -41,6 +41,12 @@ center {
   vertical-align: middle;
 }
 
+footer {
+  position: relative;
+  display: table-footer-group;
+  text-align: center;
+}
+
 .edit textarea {
   height: 300px;
   resize: none;
