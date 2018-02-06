@@ -47,7 +47,7 @@ export default {
         member_id: 1,
         like_count: 0,
         dislike_count: 0,
-        date: now.toString(),
+        date: now.getFullYear() + '.' + now.getMonth() + '.' + now.getDate(),
       });
     },
   },

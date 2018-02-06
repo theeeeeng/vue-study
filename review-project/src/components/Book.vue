@@ -19,33 +19,25 @@
       <div class="container">
         <center>
           <h1>이번주 Boook 리뷰 Top3</h1>
+          <hr/>
           <div class="review-cards">
-            <div class="card" v-for="best in bestBookReview">
-              <header class="card-header">
-                <p class="card-header-title">
-                  {{best.book_title}}
-                </p>
-                <a href="#" class="card-header-icon" aria-label="more options">
-                  <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </a>
-              </header>
-              <div class="card-content">
-                <div class="content">
-                  {{best.book_review}}
-                  <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
-                  <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                </div>
-              </div>
-              <footer class="card-footer">
-                <a href="#" class="card-footer-item like-button">{{best.like_count}} Like</a>
-                <a href="#" class="card-footer-item dislike-button">{{best.dislike_count}} Dislike</a>
-              </footer>
-            </div>
+            <bookReviewCard class="card" :review="best" :key="best.key" v-for="best in bestBooksReview"></bookReviewCard>
           </div>
         </center>
+      </div>
+    </section>
+    <section class="section03">
+      <div class="container">
+        <center>
+          <h1>Boook Reeeview</h1>
+          <hr/>
+          <div class="review-cards">
+            <bookReviewCard class="card" :review="book" :key="book.key" v-for="book in booksReview"></bookReviewCard>
+          </div>
+        </center>
+        <footer>
+          <img src="../assets/ic_keyboard_arrow_down_white.png"/>
+        </footer>
       </div>
     </section>
   </div>
@@ -54,30 +46,41 @@
 <script>
 import firebase from 'firebase';
 import Navigation from './Navigation';
+import BookReviewCard from './BookReviewCard';
 
 export default {
   name: 'Book',
   components: {
     navigation: Navigation,
+    bookReviewCard: BookReviewCard
   },
   data() {
     return {
       booksRef: firebase.database().ref('book'),
-      bestBookReview: [],
+      bestBooksReview: [],
+      booksReview: [],
     };
   },
   mounted () {
-    var bestBooksRef = this.booksRef.orderByChild('like_count').limitToFirst(3);
 
-    bestBooksRef.once('value', snapshot => {
+    this.booksRef.orderByChild('like_count').limitToLast(3).once('value', snapshot => {
       var booksArr = [];
       snapshot.forEach(function (childSnapshot) {
         booksArr.push(childSnapshot.val());
       });
 
-      this.bestBookReview = booksArr;
+      this.bestBooksReview = booksArr;
+      this.bestBooksReview.reverse();
+    });
 
-      console.log(this.bestBookReview);
+    this.booksRef.orderByChild('date').once('value', snapshot => {
+      var booksArr = [];
+      snapshot.forEach(function (childSnapshot) {
+        booksArr.push(childSnapshot.val());
+      });
+
+      this.booksReview = booksArr;
+      this.booksReview.reverse();
     });
   }, methods: {
   }
@@ -85,6 +88,13 @@ export default {
 </script>
 
 <style scoped>
+hr {
+  width: 90%;
+  max-width: 500px;
+  height: 2px;
+  background-color: #fff;
+}
+
 .section01 {
   background: url("../assets/bg_3.jpg") no-repeat bottom;
   background-size: cover;
@@ -96,13 +106,6 @@ export default {
   font-weight: 900;
   font-size: 30pt;
   line-height: 1;
-}
-
-.section01 hr {
-  width: 90%;
-  max-width: 500px;
-  height: 2px;
-  background-color: #fff;
 }
 
 .section01 h3 {
@@ -117,13 +120,20 @@ export default {
 }
 
 .section02 h1 {
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   font-size: 36px;
   font-weight: 900;
   color: #fff;
 }
 
-.section02 .card {
+.review-cards {
+  width: 100%;
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  text-align: left;
+}
+
+.card {
   display: inline-block;
   width: 80%;
   max-width: 300px;
@@ -131,16 +141,23 @@ export default {
   vertical-align: top;
 }
 
-.section02 .like-button {
-  color: red;
+.section03 {
+  background-color: rgb(95, 75, 139);
 }
 
-.section02 .dislike-button {
-  color: #000;
+.section03 h1 {
+  margin: 20px 0 0 0;
+  font-size: 36px;
+  font-weight: 900;
+  color: #fff;
 }
 
-@media (max-width: 900px) {
-  .section02 .card {
+@media (max-width: 959px) {
+  .review-cards {
+    text-align: center;
+  }
+  
+  .card {
     display: inline-block;
     max-width: 500px;
   }
