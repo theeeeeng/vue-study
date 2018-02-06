@@ -29,9 +29,9 @@
             <h5>Select the type of review</h5>
           </div>
           <div class="section-buttons">
-            <router-link to="/book"><button>Boooook</button></router-link>
-            <button>Movieeeee</button>
-            <button>Gameeeee</button>
+            <router-link to="/book"><a class="button is-medium is-primary is-rounded">Boook</a></router-link>
+            <router-link to="/"><a class="button is-medium is-primary is-rounded" onclick="alert('coming soon')">Mooovie</a></router-link>
+            <router-link to="/"><a class="button is-medium is-primary is-rounded" onclick="alert('coming soon')">Gammme</a></router-link>
           </div>
         </center>
       </div>
@@ -120,7 +120,7 @@ export default {
   text-align: center;
 }
 
-.section02 button {
+.section02 .button {
   width: 160px;
   height: 45px;
   margin: 0 20px;
@@ -132,8 +132,16 @@ export default {
   font-weight: 700;
 }
 
+.section02 .button:hover {
+  width: 160px;
+  height: 45px;
+  margin: 0 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+
 @media (max-width: 740px) {
-  .section02 button {
+  .section02 .button {
     width: 80%;
     max-width: 400px;
     margin: 10px 0;

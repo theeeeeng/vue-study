@@ -18,26 +18,16 @@
     <section class="section02">
       <div class="container">
         <center>
-          <h1>이번주 Boook 리뷰 Top3</h1>
-          <hr/>
+          <h1>Boook 리뷰 Top3</h1>
           <div class="review-cards">
             <bookReviewCard class="card" :review="best" :key="best.key" v-for="best in bestBooksReview"></bookReviewCard>
           </div>
-        </center>
-      </div>
-    </section>
-    <section class="section03">
-      <div class="container">
-        <center>
-          <h1>Boook Reeeview</h1>
           <hr/>
+          <h1>Boook 리뷰 Top3</h1>
           <div class="review-cards">
             <bookReviewCard class="card" :review="book" :key="book.key" v-for="book in booksReview"></bookReviewCard>
           </div>
         </center>
-        <footer>
-          <img src="../assets/ic_keyboard_arrow_down_white.png"/>
-        </footer>
       </div>
     </section>
   </div>
@@ -88,13 +78,6 @@ export default {
 </script>
 
 <style scoped>
-hr {
-  width: 90%;
-  max-width: 500px;
-  height: 2px;
-  background-color: #fff;
-}
-
 .section01 {
   background: url("../assets/bg_3.jpg") no-repeat bottom;
   background-size: cover;
@@ -108,6 +91,13 @@ hr {
   line-height: 1;
 }
 
+.section01 hr {
+  width: 90%;
+  max-width: 500px;
+  height: 2px;
+  background-color: #fff;
+}
+
 .section01 h3 {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 800;
@@ -115,8 +105,7 @@ hr {
 }
 
 .section02 {
-  background: url("../assets/bg_4.jpg") no-repeat bottom;
-  background-size: cover;
+  background-color: rgb(95, 75, 139);
 }
 
 .section02 h1 {
@@ -126,14 +115,14 @@ hr {
   color: #fff;
 }
 
-.review-cards {
+.section02 .review-cards {
   width: 100%;
   max-width: 960px;
   margin: 40px auto 0 auto;
   text-align: left;
 }
 
-.card {
+.section02 .card {
   display: inline-block;
   width: 80%;
   max-width: 300px;
@@ -141,23 +130,12 @@ hr {
   vertical-align: top;
 }
 
-.section03 {
-  background-color: rgb(95, 75, 139);
-}
-
-.section03 h1 {
-  margin: 20px 0 0 0;
-  font-size: 36px;
-  font-weight: 900;
-  color: #fff;
-}
-
 @media (max-width: 959px) {
-  .review-cards {
+  .section02 .review-cards {
     text-align: center;
   }
-  
-  .card {
+
+  .section02 .card {
     display: inline-block;
     max-width: 500px;
   }

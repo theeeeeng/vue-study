@@ -8,6 +8,7 @@ import Book from '@/components/Book';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -36,4 +37,7 @@ export default new Router({
       component: Book,
     },
   ],
+  scrollBehavior (to, from, savedPosition) { // 라우터 동작 시 스크롤 위치 변경
+    return { x: 0, y: 0 }
+  }
 });
