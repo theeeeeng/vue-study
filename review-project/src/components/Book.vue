@@ -56,7 +56,10 @@ export default {
     this.booksRef.orderByChild('like_count').limitToLast(3).once('value', snapshot => {
       var booksArr = [];
       snapshot.forEach(function (childSnapshot) {
-        booksArr.push(childSnapshot.val());
+        var obj = childSnapshot.val();
+        var key = childSnapshot.key;
+        obj.key = key; // 리뷰별 고유키 값 까지 저장
+        booksArr.push(obj);
       });
 
       this.bestBooksReview = booksArr;
