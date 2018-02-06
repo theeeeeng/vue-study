@@ -65,12 +65,16 @@ export default {
 
     this.booksRef.orderByChild('date').once('value', snapshot => {
       var booksArr = [];
+
       snapshot.forEach(function (childSnapshot) {
-        booksArr.push(childSnapshot.val());
+        var obj = childSnapshot.val();
+        var key = childSnapshot.key;
+        obj.key = key; // 리뷰별 고유키 값 까지 저장
+        booksArr.push(obj);
       });
 
       this.booksReview = booksArr;
-      this.booksReview.reverse();
+      this.booksReview.reverse(); // 역순으로 저장
     });
   }, methods: {
   }
