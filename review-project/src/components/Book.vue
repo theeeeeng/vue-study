@@ -22,10 +22,12 @@
           <div class="review-cards">
             <bookReviewCard class="card" :review="best" :key="best.key" v-for="best in bestBooksReview"></bookReviewCard>
           </div>
+          <h1 class="loading" v-if="bestReviewLoading">잠시만 기다려주세요...!</h1>
           <hr/>
-          <h1>Boook 리뷰 Top3</h1>
+          <h1>리뷰보기</h1>
           <div class="review-cards">
             <bookReviewCard class="card" :review="book" :key="book.key" v-for="book in booksReview"></bookReviewCard>
+            <h1 class="loading" v-if="reviewLoading">잠시만 기다려주세요...!</h1>
           </div>
         </center>
       </div>
@@ -49,9 +51,11 @@ export default {
       booksRef: firebase.database().ref('book'),
       bestBooksReview: [],
       booksReview: [],
+      bestReviewLoading: true,
+      reviewLoading: true,
     };
   },
-  mounted () {
+  beforeMount () {
 
     this.booksRef.orderByChild('like_count').limitToLast(3).once('value', snapshot => {
       var booksArr = [];
@@ -64,6 +68,7 @@ export default {
 
       this.bestBooksReview = booksArr;
       this.bestBooksReview.reverse();
+      this.bestReviewLoading = false;
     });
 
     this.booksRef.orderByChild('date').once('value', snapshot => {
@@ -78,6 +83,7 @@ export default {
 
       this.booksReview = booksArr;
       this.booksReview.reverse(); // 역순으로 저장
+      this.reviewLoading = false;
     });
   }, methods: {
   }
@@ -116,10 +122,22 @@ export default {
 }
 
 .section02 h1 {
-  margin: 20px 0 0 0;
+  margin: 100px 0 0 0;
+  text-align: center;
   font-size: 36px;
   font-weight: 900;
   color: #fff;
+}
+
+.section02 h1.loading {
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section02 hr {
+  width: 100%;
+  max-width: 960px;
+  margin: 100px 0 0 0;
 }
 
 .section02 .review-cards {
@@ -135,6 +153,11 @@ export default {
   max-width: 300px;
   margin: 10px;
   vertical-align: top;
+}
+
+.loading span {
+  color: #fff;
+  font-size: 500px;
 }
 
 @media (max-width: 959px) {

@@ -4,7 +4,7 @@
       <p class="card-header-title">
         {{review.book_title}}
       </p>
-      <a href="#" class="card-header-icon" aria-label="more options">
+      <a class="card-header-icon" aria-label="more options" v-on:click="isCardModalActive = true">
         더보기
         <span class="icon"><i class="fas fa-angle-right"></i></span>
       </a>
@@ -17,22 +17,33 @@
       </div>
     </div>
     <footer class="card-footer">
-      <a href="#" class="card-footer-item like-button">
+      <a class="card-footer-item like-button">
         <span>{{review.like_count}}</span>
         <span class="icon"><i class="fas fa-thumbs-up"></i></span>
       </a>
-      <a href="#" class="card-footer-item dislike-button">
+      <a class="card-footer-item dislike-button">
         <span>{{review.dislike_count}}</span>
         <span class="icon"><i class="fas fa-thumbs-down"></i></span>
       </a>
     </footer>
+    <bookReviewModal :isCardModalActive="isCardModalActive"></bookReviewModal>
   </div>
 </template>
 
 <script>
+import BookReviewModal from './BookReviewModal';
+
 export default {
   name: 'BookReviewCard',
-  props: ['review']
+  components: {
+    bookReviewModal: BookReviewModal
+  },
+  props: ['review'],
+  data() {
+    return {
+      isCardModalActive: false,
+    };
+  },
 }
 </script>
 
