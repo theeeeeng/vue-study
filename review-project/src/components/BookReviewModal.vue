@@ -2,11 +2,6 @@
   <div class="book-review-modal">
     <b-modal :active.sync="isCardModalActive" :width="640" scroll="keep">
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="static/img/placeholder-1280x960.png" alt="Image">
-                </figure>
-            </div>
             <div class="card-content">
                 <div class="media">
                     <div class="media-left">
@@ -15,17 +10,15 @@
                         </figure>
                     </div>
                     <div class="media-content">
-                        <p class="title is-4">John Smith</p>
+                        <p class="title is-4">{{review.book_title}}</p>
                         <p class="subtitle is-6">@johnsmith</p>
                     </div>
                 </div>
 
                 <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a>#css</a> <a>#responsive</a>
+                    {{review.book_review}}
                     <br>
-                    <small>11:09 PM - 1 Jan 2016</small>
+                    <small>{{review.date}}</small>
                 </div>
             </div>
         </div>
@@ -36,7 +29,7 @@
 <script>
 export default {
   name: 'BookReviewModal',
-  props: ['isCardModalActive'],
+  props: ['isCardModalActive', 'review'],
 }
 </script>
 

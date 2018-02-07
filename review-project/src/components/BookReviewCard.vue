@@ -26,7 +26,7 @@
         <span class="icon"><i class="fas fa-thumbs-down"></i></span>
       </a>
     </footer>
-    <bookReviewModal :isCardModalActive="isCardModalActive"></bookReviewModal>
+    <bookReviewModal :isCardModalActive="isCardModalActive" :review="review"></bookReviewModal>
   </div>
 </template>
 
