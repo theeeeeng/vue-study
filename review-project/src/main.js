@@ -23,6 +23,8 @@ const config = {
 
 firebase.initializeApp(config);
 
+// firebase.auth().onAuthStateChanged((user) => {});
+
 Vue.component(Icon);
 Vue.component(vuefire);
 Vue.use(Buefy);
